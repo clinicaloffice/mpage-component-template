@@ -1,0 +1,11 @@
+{
+  "/cclproxy/*": {
+    "target": "http://sub_domain.host_name.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/cclproxy": ""
+    }
+  }
+}

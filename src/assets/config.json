@@ -1,0 +1,8 @@
+{
+    "contextRoot": "http://sub_domain.host_name.com/discern/domain/mpages/reports",
+    "domain":[
+        "b1234",
+        "c1234",
+        "p1234"
+    ]
+}
