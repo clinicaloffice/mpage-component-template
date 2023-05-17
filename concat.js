@@ -8,13 +8,13 @@ const concat = require("concat");
         "./dist/mpage-component-template/polyfills.js"
     ];
 
-    const exists = fs.exists("elements");
+    const exists = fs.exists("cerner-component");
     
     if (exists) {
-        fs.removeSync("elements");
+        fs.removeSync("cerner-component");
     }
 
-    await fs.ensureDir("elements");
-    await concat(files, "elements/mpage-component-template.js");
-    await fs.copyFile("./dist/mpage-component-template/styles.css", "elements/mpage-component-template.css");
+    await fs.ensureDir("cerner-component");
+    await concat(files, "cerner-component/mpage-component-template.js");
+    await fs.copyFile("./dist/mpage-component-template/styles.css", "cerner-component/mpage-component-template.css");
 })();
