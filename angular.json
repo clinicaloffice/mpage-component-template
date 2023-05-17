@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mpage-template": {
+    "mpage-component-template": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mpage-template",
+            "outputPath": "dist/mpage-component-template",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -50,7 +50,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "none"
             },
             "development": {
               "buildOptimizer": false,
@@ -66,15 +66,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mpage-template:build",
+            "browserTarget": "mpage-component-template:build",
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mpage-template:build:production"
+              "browserTarget": "mpage-component-template:build:production"
             },
             "development": {
-              "browserTarget": "mpage-template:build:development"
+              "browserTarget": "mpage-component-template:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mpage-template:build"
+            "browserTarget": "mpage-component-template:build"
           }
         },
         "test": {

@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
+import { NgModule, ErrorHandler, Injector,  CUSTOM_ELEMENTS_SCHEMA, APP_INITIALIZER} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MatLuxonDateModule, LuxonDateAdapter } from '@angular/material-luxon-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { createCustomElement } from '@angular/elements';
 
 export const configFactory = (configService: ConfigService) => {
   return () => configService.loadConfig();
@@ -40,8 +41,8 @@ export const CUSTOM_DATE_FORMATS = {
     FormsModule,
     ReactiveFormsModule,
     MatLuxonDateModule
-    //    MatMomentDateModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: APP_INITIALIZER,
@@ -55,8 +56,19 @@ export const CUSTOM_DATE_FORMATS = {
     {
       provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS
     }
-  ],
-  bootstrap: [AppComponent]
+  ]
+//  bootstrap: [AppComponent]
 })
 export class AppModule {
+
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const element = createCustomElement(AppComponent, {
+      injector: this.injector
+    });
+    
+    customElements.define('mpage-component-template', element);
+  }
+
 }
