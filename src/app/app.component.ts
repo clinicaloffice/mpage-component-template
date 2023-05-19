@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { mPageService } from '@clinicaloffice/clinical-office-mpage-core';
+import { mPageLogComponent, mPageService } from '@clinicaloffice/clinical-office-mpage-core';
 import { CUSTOM_DATE_FORMATS } from './app.module';
 
 @Component({
@@ -9,6 +9,8 @@ import { CUSTOM_DATE_FORMATS } from './app.module';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  @ViewChild(mPageLogComponent) activityLog!: mPageLogComponent
 
   constructor(public activatedRoute: ActivatedRoute, public mPage: mPageService) {
 
@@ -29,5 +31,18 @@ export class AppComponent implements OnInit {
       // Add your initialization code here - do not place outside setTimeout function
     }, 0);
   }
+
+  // Used by debugger to detect which component is being hovered over
+  @HostListener('mouseover') 
+  onMouseOver() {
+    this.activityLog.overComponent = true;
+  }
+
+  // Used by debugger to detect which component is not being hovered over
+  @HostListener('mouseout') 
+  onMouseOut() {
+    this.activityLog.overComponent = false;
+  }
+
 
 }
