@@ -68,7 +68,9 @@ export class AppModule {
       injector: this.injector
     });
     
-    customElements.define('mpage-component-template', element);
+    if (!customElements.get('mpage-component-template')) {
+      customElements.define('mpage-component-template', element);
+    }
   }
 
 }

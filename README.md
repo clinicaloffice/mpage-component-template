@@ -3,13 +3,12 @@
 This template has been designed to get you up and running with a new Clinical Office MPage
 with as little effort as possible.
 
-This template will support any version of Angular 15 or higher and is to be used only
+This template will support any version of Angular 16 or higher and is to be used only
 in projects where the Microsoft Edge WebView controller is used as this project will not
 render in Internet Explorer.
 
-This template is recommended if your MPage project will always be rendered in Edge
-as all legacy Internet Explorer requirements have been removed resulting in reduced package
-sizes, removal of polyfills and improved performance.
+This template has been designed to integrate with the Cerner Component Framework running
+in Edge mode. This component will fail if your Cerner preferences are set to Internet Explorer.
 
 >**A Valid Clinical Office:MPage Edition license is required to use this template.
 > If you do not have your development computer configured with your license key
@@ -82,4 +81,4 @@ normally required to initiate an MPage.
 
 # MpageTemplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
