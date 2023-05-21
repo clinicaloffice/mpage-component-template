@@ -30,14 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "src/styles.scss",
-                "bundleName": "mpage-component-template"
-              },
-              {
-                "input": "src/theme.scss",
-                "bundleName": "angular-material"
-              }
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           },
