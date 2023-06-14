@@ -30,8 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/theme.scss"
+              {
+                "input": "src/styles.scss",
+                "bundleName": "styles"
+              },
+              {
+                "input": "src/theme.scss",
+                "bundleName": "material-theme"
+              }                          
             ],
             "scripts": []
           },

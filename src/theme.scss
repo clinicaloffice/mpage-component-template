@@ -1,30 +1,30 @@
 @use '@angular/material' as mat;
 
 @include mat.core();
-@include mat.strong-focus-indicators();
+//@include mat.strong-focus-indicators();
 
 // Define primary theme
 // --------------------
 // see https://m1.material.io/style/color.html#color-color-palette for color palettes
-$co-primary: mat.define-palette(mat.$indigo-palette, 500);
-$co-accent: mat.define-palette(mat.$indigo-palette, 100);
+$co-primary: mat.define-palette(mat.$teal-palette, 300);
+$co-accent: mat.define-palette(mat.$teal-palette, 50);
 $co-warn: mat.define-palette(mat.$red-palette);
 
 // mat.define-typography-level params ($font-size, $line-height, $font-weight, $font-family, $letter-spacing)
 $co-typography: mat.define-typography-config(
-    $headline-1: mat.define-typography-level(96px, 196px, 300, 'Roboto', 0em),
-    $headline-2: mat.define-typography-level(60px, 60px, 400, 'Roboto', 0em),
-    $headline-3: mat.define-typography-level(48px, 48px, 400, 'Roboto', 0em),
-    $headline-4: mat.define-typography-level(34px, 34px, 400, 'Roboto', 0em),
-    $headline-5: mat.define-typography-level(24px, 24px, 400, 'Roboto', 0em), // h1
-    $headline-6: mat.define-typography-level(20px, 20px, 400, 'Roboto', 0em), // h2
-    $body-1: mat.define-typography-level(12px, 12px, 400, 'Roboto', 0em),
-    $body-2: mat.define-typography-level(12px, 12px, 500, 'Roboto', 0em), // body
-    $subtitle-1: mat.define-typography-level(16px, 16px, 400, 'Roboto', 0em), // h3
-    $subtitle-2: mat.define-typography-level(14px, 14px, 400, 'Roboto', 0em), // h4
-    $button: mat.define-typography-level(12px, 14px, 500, 'Roboto', 0em),
-    $overline: mat.define-typography-level(10px, 10px, 500, 'Roboto', 0em),
-    $caption: mat.define-typography-level(12px, 12px, 400, 'Roboto', 0em));
+    $headline-1: mat.define-typography-level(6rem, 12rem, 300, 'Roboto', -1.5px),
+    $headline-2: mat.define-typography-level(3.75rem, 3.75rem, 400, 'Roboto', -0.5px),
+    $headline-3: mat.define-typography-level(3rem, 3rem, 400, 'Roboto', 0px),
+    $headline-4: mat.define-typography-level(2.125rem, 2.125rem, 400, 'Roboto', 0.25px),
+    $headline-5: mat.define-typography-level(1.5rem, 1.5rem, 400, 'Roboto', 0px), // h1
+    $headline-6: mat.define-typography-level(1.25rem, 1.25rem, 400, 'Roboto', 0.15px), // h2
+    $body-1: mat.define-typography-level(1rem, 1rem, 400, 'Roboto', 0.1px),
+    $body-2: mat.define-typography-level(0.875rem, 0.875rem, 500, 'Roboto', 0.25px), // body
+    $subtitle-1: mat.define-typography-level(1rem, 1rem, 400, 'Roboto', 0.15px), // h3
+    $subtitle-2: mat.define-typography-level(0.875rem, 0.875rem, 400, 'Roboto', 0.1px), // h4
+    $button: mat.define-typography-level(0.75rem, 0.875rem, 500, 'Roboto', 1.25px),
+    $overline: mat.define-typography-level(0.625rem, 0.625rem, 500, 'Roboto', 1.5px),
+    $caption: mat.define-typography-level(0.75rem, 0.75rem, 400, 'Roboto', 0.4px));
     
 @include mat.typography-hierarchy($co-typography);
 
@@ -32,7 +32,7 @@ $co-theme: mat.define-light-theme((color: (primary: $co-primary,
                 accent: $co-accent,
                 warn: $co-warn ),
             typography: $co-typography,
-            density: -1)); // -1 condensed controls, 0 for normal
+            density: -3)); // -3 up to -1 for condensed controls, 0 for normal
 
 @include mat.all-component-themes($co-theme);
-@include mat.strong-focus-indicators($co-theme);
+//@include mat.strong-focus-indicators($co-theme);

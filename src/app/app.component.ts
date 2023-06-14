@@ -32,17 +32,4 @@ export class AppComponent implements OnInit {
     }, 0);
   }
 
-  // Used by debugger to detect which component is being hovered over
-  @HostListener('mouseover') 
-  onMouseOver() {
-    this.activityLog.overComponent = true;
-  }
-
-  // Used by debugger to detect which component is not being hovered over
-  @HostListener('mouseout') 
-  onMouseOut() {
-    this.activityLog.overComponent = false;
-  }
-
-
 }
