@@ -1,1 +1,6 @@
 /* You can custom styles to this file, however DO NOT define any global styles as it will have a visual affect on Cerner standard components */
+
+// Prevent transparent background of Material drop-downs in Cerner components
+.cdk-overlay-pane {
+    background-color: white !important;
+}
